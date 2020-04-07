@@ -1,0 +1,36 @@
+<!-- 
+ <ul class="tasks">
+    <li ng-repeat="code in ListOfCodes track by code.recordid"  class="task">{{code.fields.city}}  {{code.fields.zip}}</li>
+    </ul> -->
+
+    <div class="layout-cont">
+        <div class="header">
+               <div class="header-title">Zipcodes List</div>                         
+        </div>
+        <div class="main-cont">
+            <div class="search-cont">
+                <span class="search-div">Search By  Zipcode: </span> 
+                <input class="search-input" ng-keyup="searchZip($event)" ng-model="search" />
+            </div>
+            <div class="section-wrp">
+                <div class="table-cont" ng-if="ListOfCodes.length > 0">
+                    <div class="table-wrp"  filter-list="search" id="fixed" when-scrolled="loadMore()">
+                        <div class="table-row table-header">
+                            <div class="table-col">Zip Code</div>
+                            <div class="table-col">City</div>
+                            <div class="table-col">State</div>
+                        </div>
+                        <div class="table-row"   ng-repeat="code in ListOfCodes | customFilter  : search : items " >
+                            <div class="table-col">{{code.fields.zip}}</div>
+                            <div class="table-col">{{code.fields.city}}</div>
+                            <div class="table-col">{{code.fields.state}}</div>
+                        </div>
+                        <p ng-show="(ListOfCodes | customFilter : search : items).length==0">No Result Found.</p> 
+                    </div>
+                </div>
+                <div class="map-cont">
+                    <div id="dvMap" style="width:100%; height:100%"></div>
+                </div>
+            </div>
+        </div>
+</div>
