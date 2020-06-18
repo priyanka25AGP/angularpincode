@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.8",
+    "angular": "^1.8.0",
     "angular-route": "^1.5.8",
     "cors": "^2.8.5",
     "express": "^4.17.1",
